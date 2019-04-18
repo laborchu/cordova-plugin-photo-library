@@ -19,7 +19,7 @@ import Foundation
 
 
     // Will sort by creation date
-    func getLibrary(_ command: CDVInvokedUrlCommand) {
+    @objc(getLibrary:) func getLibrary(_ command: CDVInvokedUrlCommand) {
         concurrentQueue.async {
 
             if !PhotoLibraryService.hasPermission() {
@@ -214,7 +214,7 @@ import Foundation
 
     }
 
-    func requestAuthorization(_ command: CDVInvokedUrlCommand) {
+    @objc(requestAuthorization:) func requestAuthorization(_ command: CDVInvokedUrlCommand) {
 
         let service = PhotoLibraryService.instance
 
@@ -228,7 +228,7 @@ import Foundation
 
     }
 
-    func saveImage(_ command: CDVInvokedUrlCommand) {
+    @objc(saveImage:) func saveImage(_ command: CDVInvokedUrlCommand) {
         concurrentQueue.async {
 
             if !PhotoLibraryService.hasPermission() {
